@@ -1,22 +1,15 @@
 $(function () {
   // ハンバーガーアイコンをクリックしたとき、グローバルナビを開閉する
   $(".js-hamburger").on("click", function () {
-    if ($(this).hasClass("active")) {
-      $(this).removeClass("active");
-      $(".js-overlay, .js-ly-global-nav").removeClass("open");
-    } else {
-      $(this).addClass("active");
-      $(".js-overlay, .js-ly-global-nav").addClass("open");
-    }
+    $(this).toggleClass("active");
+    $(".js-overlay, .js-ly-global-nav").toggleClass("open");
   });
 
   // overlayをクリックしたとき、global-navを閉じる
   $(".js-overlay").on("click", function () {
-    if ($(this).hasClass("open")) {
-      $(this).removeClass("open");
-      $(".js-hamburger").removeClass("active");
-      $(".js-ly-global-nav").removeClass("open");
-    }
+    $(this).toggleClass("open");
+    $(".js-hamburger").removeClass("active");
+    $(".js-ly-global-nav").removeClass("open");
   });
 
   // サブメニューの開閉
